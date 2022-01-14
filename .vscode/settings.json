@@ -1,0 +1,16 @@
+{
+	"git.ignoreLimitWarning": true,
+	"editor.wordWrap": "on",
+	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorBlinking": "expand",
+	"trailing-spaces.trimOnSave": true,
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"editor.formatOnSave": false,
+	"files.encoding": "utf8",
+	"files.exclude": {
+		"**/.DS_Store": true
+	},
+	"files.eol": "\n",
+	"editor.tabSize": 4
+}
