@@ -15,17 +15,17 @@ import (
 
 func main() {
 	var endpoint, accessKey, accessSecret string
-	var project, logstor, topic, source string
+	var project, logstore, topic, source string
 	flag.StringVar(&endpoint, "endpoint", "cn-shanghai.log.aliyuncs.com", "")
 	flag.StringVar(&accessKey, "access-key", "", "")
 	flag.StringVar(&accessSecret, "access-secret", "", "")
 	flag.StringVar(&project, "project", "logrus-test", "")
-	flag.StringVar(&logstor, "logstor", "demo", "")
+	flag.StringVar(&logstore, "logstore", "demo", "")
 	flag.StringVar(&topic, "topic", "topic1", "")
 	flag.StringVar(&source, "source", "127.0.0.1", "")
 	flag.Parse()
 
-	if endpoint == "" || accessKey == "" || accessSecret == "" || project == "" || logstor == "" || topic == "" || source == "" {
+	if endpoint == "" || accessKey == "" || accessSecret == "" || project == "" || logstore == "" || topic == "" || source == "" {
 		panic("invalid params")
 	}
 
@@ -40,7 +40,7 @@ func main() {
 	h := hook.NewSLSHook(
 		producerConfig,
 		hook.SetProject(project),
-		hook.SetLogstor(logstor),
+		hook.SetLogstore(logstore),
 		hook.SetTopic(topic),
 		hook.SetSource(source),
 	)

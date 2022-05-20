@@ -19,7 +19,7 @@ func initLogrus() {
 	h := hook.NewSLSHook(
 		producerConfig,
 		hook.SetProject(project),
-		hook.SetLogstor(logstor),
+		hook.SetLogstore(logstore),
 		hook.SetTopic(topic),
 		hook.SetSource(source),
 	)

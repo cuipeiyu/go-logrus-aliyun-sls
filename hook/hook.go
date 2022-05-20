@@ -13,7 +13,7 @@ var _ logrus.Hook = (*SLSHook)(nil)
 type OptionFunc func(*Option)
 
 type Option struct {
-	project, logstor, topic, source string
+	project, logstore, topic, source string
 }
 
 func SetProject(name string) OptionFunc {
@@ -22,9 +22,9 @@ func SetProject(name string) OptionFunc {
 	}
 }
 
-func SetLogstor(name string) OptionFunc {
+func SetLogstore(name string) OptionFunc {
 	return func(o *Option) {
-		o.logstor = name
+		o.logstore = name
 	}
 }
 
@@ -86,7 +86,7 @@ func (hook *SLSHook) Fire(entry *logrus.Entry) error {
 		Contents: contents,
 	}
 
-	hook.producer.SendLog(hook.opt.project, hook.opt.logstor, hook.opt.topic, hook.opt.source, log)
+	hook.producer.SendLog(hook.opt.project, hook.opt.logstore, hook.opt.topic, hook.opt.source, log)
 	return nil
 }
 
